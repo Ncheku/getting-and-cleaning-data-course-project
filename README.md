@@ -25,12 +25,12 @@
 
 - **How to run**
 
-  - *Option 1*: Create a new folder in your current work directory. Set the new folder as the work directory. Download the script into the new folder. Open it in RStudio and source it. Alternatively, you can run ```source ./run_analysis.R``` from the RStudio console.
+  - *Option 1*: Create a new folder in the RStudio work directory. In RStudio, use `setwd()` to set the new folder as the new work directory. Download the script into the new folder. Open it in RStudio and source it. Alternatively, you can run ```source ./run_analysis.R``` from the RStudio console.
   - *Option 2*: In a shell, for example the Bash shell on a Ubuntu system or Mac OSX, make sure you create a new folder and save the script into it. Then, inside the new folder, run ```Rscript ./run_analysis.R```.
 
 - **What it does**
 
-  - *Step 0*: Download the original zipped data files from [This Link] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) and extract the data files in the working directory.
+  - *Step 0*: Download the original zipped data files from [This Link] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) and extract the data files to the working directory.
   - *Step 1*: Read in activity labels and feature names. Combine train data sets and test data sets by merging them.
   - *Step 2*: Extract only mean and standard deviation measurement variables into a new data frame.
   - *Step 3*: Use descriptive activity names on the new data frame.

@@ -5,7 +5,8 @@
 ### The Combined and Tidied Data Sets
 
 - `measureDataMeanStd.csv` contains data for the selected mean and std measurement variables by combining the following data files:
-    ```
+
+```
     UCI HAR Dataset/
     |-- test
        |-- X_test.txt
@@ -15,9 +16,10 @@
         |-- X_train.txt
         |-- subject_train.txt
         |-- y_train.txt
-    ```
--  Column headers were sourced from the original `features.csv` file. Transformations were performed on the variable names to make them descriptive.
-- `measureDataMeanStdTidyAverage.csv` contains the average values by activity by subject from `measureDataMeanStd`. The average was calcualted by applying the R mean() function to each column grouped by *subject* and *activity*.
+```
+
+-  Column headers were sourced from the original `features.csv` file. Transformations were performed on the variable names to make them more descriptive.
+- `measureDataMeanStdTidyAverage.csv` contains the average values by activity by subject from `measureDataMeanStd`. The average was calcualted by applying the R `mean()` function to each column grouped by *subject* and *activity*.
 
 ### Below Is the Content of the `Readme.txt` File in the Origianl Dataset
 
