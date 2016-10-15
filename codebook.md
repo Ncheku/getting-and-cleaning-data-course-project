@@ -13,15 +13,15 @@
        |-- subject_test.txt
        |-- y_test.txt
     |-- train
-        |-- X_train.txt
-        |-- subject_train.txt
-        |-- y_train.txt
+       |-- X_train.txt
+       |-- subject_train.txt
+       |-- y_train.txt
 ```
 
 -  Column headers were sourced from the original `features.csv` file. Transformations were performed on the variable names to make them more descriptive.
 - `measureDataMeanStdTidyAverage.csv` contains the average values by activity by subject from `measureDataMeanStd`. The average was calcualted by applying the R `mean()` function to each column grouped by *subject* and *activity*.
 
-### Below Is the Content of the `Readme.txt` File in the Origianl Dataset
+### Below Is the Content of the Original `Readme.txt` File in the Source Data Set
 
 ```
 ==================================================================
