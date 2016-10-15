@@ -124,7 +124,7 @@ colnames(measureDataMeanStd) <- gsub( "[.]+", "_", colnames(measureDataMeanStd),
 colnames(measureDataMeanStd) <- gsub( "_$", "", colnames(measureDataMeanStd), ignore.case=TRUE )
 #
 # STEP.5 - Create an independent tidy data set with the average of each variable for each 
-#        - activity and each subject
+#          activity and each subject
 measureDataMeanStdTidyAverage <- measureDataMeanStd %>% 
                                  dplyr::group_by(subject, activity) %>% 
                                  summarize_all(mean)
