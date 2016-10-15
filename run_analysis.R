@@ -129,10 +129,24 @@ measureDataMeanStdTidyAverage <- measureDataMeanStd %>%
                                  dplyr::group_by(subject, activity) %>% 
                                  summarize_all(mean)
 
-outFileName <- "UCI_HAR_Dataset-Combined_and_Tidied.RData"
+outDirName <- "UCI-HAR-Dataset-Combined-and-Tidied"
+if ( !dir.exists(outDirName) ) {
+    dir.create( file.path( getwd(), outDirName ) )
+}
+
+outFile <- file.path( getwd(), outDirName, "UCI_HAR_Dataset-Combined_and_Tidied.RData" )
 listDataFramesToSave <- Filter( function(x) is.data.frame( get(x) ), ls() )
-save( list=listDataFramesToSave, file=outFileName )
-writeLines( paste( "\nThe following data frames have been saved in", outFileName, "\n", sep=" " ) )
+save( list=listDataFramesToSave, file=outFile )
+
+for ( i in 1:length(listDataFramesToSave) ) {
+    outFile <- file.path( getwd(), outDirName, 
+                          paste( listDataFramesToSave[i], ".csv", sep="" ) )
+    write.table( get( listDataFramesToSave[i] ), 
+                 outFile,
+                 append=FALSE, quote=FALSE, sep=" ", eol="\n", na="NA", dec=".",
+                 row.names=FALSE, col.names=TRUE )
+}
+writeLines( paste( "\nThe following data frames have been saved under", outDirName, "\n", sep=" " ) )
 writeLines( paste( listDataFramesToSave, sep="\n"))
 #
 # END OF SCRIPT
